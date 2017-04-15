@@ -1,0 +1,4 @@
+Added Reference from Data to Models, Entity Framework, Models, Initialized Db sets
+
+Call the Utility.InitDb method from client, Specifi with model builder  one to one Relations
+When you give properties name, they cant have the same as their enclosing type.
