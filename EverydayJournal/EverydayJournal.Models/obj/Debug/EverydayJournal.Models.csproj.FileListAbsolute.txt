@@ -1,0 +1,10 @@
+D:\EverydayJournal\EverydayJournal\EverydayJournal.Models\bin\Debug\EverydayJournal.Models.dll.config
+D:\EverydayJournal\EverydayJournal\EverydayJournal.Models\bin\Debug\EverydayJournal.Models.dll
+D:\EverydayJournal\EverydayJournal\EverydayJournal.Models\bin\Debug\EverydayJournal.Models.pdb
+D:\EverydayJournal\EverydayJournal\EverydayJournal.Models\bin\Debug\EntityFramework.dll
+D:\EverydayJournal\EverydayJournal\EverydayJournal.Models\bin\Debug\EntityFramework.SqlServer.dll
+D:\EverydayJournal\EverydayJournal\EverydayJournal.Models\bin\Debug\EntityFramework.xml
+D:\EverydayJournal\EverydayJournal\EverydayJournal.Models\bin\Debug\EntityFramework.SqlServer.xml
+D:\EverydayJournal\EverydayJournal\EverydayJournal.Models\obj\Debug\EverydayJournal.Models.csprojResolveAssemblyReference.cache
+D:\EverydayJournal\EverydayJournal\EverydayJournal.Models\obj\Debug\EverydayJournal.Models.dll
+D:\EverydayJournal\EverydayJournal\EverydayJournal.Models\obj\Debug\EverydayJournal.Models.pdb
