@@ -10,6 +10,7 @@
         {
             EverydayJournalContext.Create();
             var context = new EverydayJournalContext();
+            
             Console.WriteLine(context.People.Count());
         }
     }

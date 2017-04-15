@@ -52,6 +52,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EverydayJournalContext.cs" />
+    <Compile Include="Migrations\201704151316207_InitialCreate.cs" />
+    <Compile Include="Migrations\201704151316207_InitialCreate.Designer.cs">
+      <DependentUpon>201704151316207_InitialCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -64,6 +68,11 @@
       <Project>{d370d354-df7a-4754-8acf-e908b1ead2eb}</Project>
       <Name>EverydayJournal.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201704151316207_InitialCreate.resx">
+      <DependentUpon>201704151316207_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
