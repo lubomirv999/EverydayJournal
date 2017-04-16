@@ -1,0 +1,58 @@
+﻿<Page x:Class="EverydayJournal.UserHomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EverydayJournal"
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="500"
+      Title="UserHomePage">
+
+    <Grid>
+        <!--General row andcolumn definition of the page-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!--Title-->
+        <Label Grid.Row="0" Style="{StaticResource titleHeaderStyle}">User Home Page</Label>
+
+        <!--Making new grid to split the second row with two columns-->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <!--Profile-->
+            <Label Grid.Column="0" Grid.Row="0" Style="{StaticResource labelsUserMenu}">Profile</Label>
+            <Button Grid.Column="0" Grid.Row="0" Style="{StaticResource buttonGeneralStyle}" Click="Button_Click_Profile">View</Button>
+            
+            <!--Tasks-->
+            <Label Grid.Column="1" Grid.Row="0" Style="{StaticResource labelsUserMenu}">Taks</Label>
+            <Button Grid.Column="1" Grid.Row="0" Style="{StaticResource buttonGeneralStyle}" Click="Button_Click_Tasks">View</Button>
+            
+            <!--Foods by Date-->
+            <Label Grid.Column="0" Grid.Row="1" Style="{StaticResource labelsUserMenu}">Foods by Date</Label>
+            <Button Grid.Column="0" Grid.Row="1" Style="{StaticResource buttonGeneralStyle}" Click="Button_Click_FoodByDate">View</Button>
+            
+            <!--Physical Conditions-->
+            <Label Grid.Column="1" Grid.Row="1" Style="{StaticResource labelsUserMenu}">Physical Conditions</Label>
+            <Button Grid.Column="1" Grid.Row="1" Style="{StaticResource buttonGeneralStyle}" Click="Button_Click_PhysicalConditions">View</Button>
+            
+            
+        </Grid>
+        <!--Background-->
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/background.jpg"/>
+        </Grid.Background>
+    </Grid>
+</Page>

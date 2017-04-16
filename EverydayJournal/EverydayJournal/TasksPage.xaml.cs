@@ -12,18 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using EverydayJournal.Data;
 
 namespace EverydayJournal
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for TasksPage.xaml
     /// </summary>
-    public partial class MainWindow : NavigationWindow
+    public partial class TasksPage : Page
     {
-        public MainWindow()
+        public TasksPage()
         {
-            InitializeComponent();          
+            InitializeComponent();
         }
     }
 }

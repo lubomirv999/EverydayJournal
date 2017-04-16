@@ -1,0 +1,45 @@
+﻿<Page x:Class="EverydayJournal.RegisterPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EverydayJournal"
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="500"
+      Title="RegisterPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!--Title of the page-->
+        <Label Grid.Column="0" Grid.Row="0" Style="{StaticResource titleHeaderStyle}">Register</Label>
+        <!--Firstname label and textBox-->
+        <Label Grid.Column="0" Grid.Row="1" Style="{StaticResource formLableStyle}">FirstName</Label>
+        <TextBox Grid.Column="0" Grid.Row="1" Style="{StaticResource generalTextBoxStyle}"></TextBox>
+        <!--Lastname label and textBox-->
+        <Label Grid.Column="0" Grid.Row="2" Style="{StaticResource formLableStyle}">LastName</Label>
+        <TextBox Grid.Column="0" Grid.Row="2" Style="{StaticResource generalTextBoxStyle}"></TextBox>
+        <!--Password labe and passwordBox-->
+        <Label Grid.Column="0" Grid.Row="3" Style="{StaticResource formLableStyle}">Password</Label>
+        <PasswordBox Grid.Column="0" Grid.Row="3" Style="{StaticResource passwordBoxStyle}"></PasswordBox>
+        <!--Email label and textBox-->
+        <Label Grid.Column="0" Grid.Row="4" Style="{StaticResource formLableStyle}">Email</Label>
+        <TextBox Grid.Column="0" Grid.Row="4" Style="{StaticResource generalTextBoxStyle}"></TextBox>
+
+        <!--Submit register button-->
+        <Button Grid.Column="0" Grid.Row="5" Style="{StaticResource buttonGeneralStyle}">Register</Button>
+        <!--Background-->
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/background.jpg"/>
+        </Grid.Background>
+    </Grid>
+</Page>

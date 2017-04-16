@@ -1,0 +1,43 @@
+﻿<Page x:Class="EverydayJournal.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EverydayJournal"
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="500"
+      Title="LoginPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!--Title of the page-->
+        <Label Grid.Column="0" Grid.Row="0" Style="{StaticResource titleHeaderStyle}">Login</Label>
+        <!--username of the page-->
+        <Label Grid.Column="0" Grid.Row="1" Style="{StaticResource formLableStyle}">Username</Label>
+        <TextBox x:Name="UsernameInput" Grid.Row="1" Style="{StaticResource generalTextBoxStyle}"/>
+
+        <!--password of the page-->
+        <Label Grid.Column="0" Grid.Row="2" Style="{StaticResource formLableStyle}">Password</Label>
+        <PasswordBox x:Name="PasswordInput" Grid.Column="0" Grid.Row="2" Style="{StaticResource passwordBoxStyle}"/>
+
+        <!--register if not logged-->
+        <Button Grid.Column="0" Grid.Row="3" Style="{StaticResource buttonGeneralStyle}" Click="Button_Click_Login">Login</Button>
+        <Label Grid.Column="0" Grid.Row="4" Style="{StaticResource formLableStyle}">Not Registered</Label>
+        <Button Grid.Column="0" Grid.Row="4"  Style="{StaticResource buttonGeneralStyle}" CommandParameter="{Binding Text, ElementName=UsernameInput}" Click="Button_Click_Register">Register</Button>
+
+        <!--Background-->
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/background.jpg"/>
+        </Grid.Background>
+    </Grid>
+</Page>
