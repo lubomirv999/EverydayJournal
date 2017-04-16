@@ -9,6 +9,8 @@
         [Required]
         public string Name { get; set; }
 
+        public virtual int DateId { get; set; }
+
         public virtual Date Date { get; set; }
 
         public int PersonId { get; set; }

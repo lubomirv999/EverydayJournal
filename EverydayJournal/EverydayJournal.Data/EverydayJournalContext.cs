@@ -47,13 +47,7 @@ namespace EverydayJournal.Data
 
         public virtual DbSet<Task> Tasks { get; set; }
 
-        public virtual DbSet<Date> Dates { get; set; }
-
-        public virtual DbSet<Morning> Mornings { get; set; }
-
-        public virtual DbSet<Afternoon> Afternoon { get; set; }
-
-        public virtual DbSet<Evening> Evenings { get; set; }
+        public virtual DbSet<Date> Dates { get; set; }   
 
         public virtual DbSet<PhysicalCondition> PhysicalConditions { get; set; }
 

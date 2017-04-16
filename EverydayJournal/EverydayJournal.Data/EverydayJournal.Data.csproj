@@ -51,10 +51,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dtos\TaskDto.cs" />
     <Compile Include="EverydayJournalContext.cs" />
     <Compile Include="Migrations\201704151316207_InitialCreate.cs" />
     <Compile Include="Migrations\201704151316207_InitialCreate.Designer.cs">
       <DependentUpon>201704151316207_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704160942141_RemoveTables.cs" />
+    <Compile Include="Migrations\201704160942141_RemoveTables.Designer.cs">
+      <DependentUpon>201704160942141_RemoveTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704161003277_AddDateIdToTaskAndFood.cs" />
+    <Compile Include="Migrations\201704161003277_AddDateIdToTaskAndFood.Designer.cs">
+      <DependentUpon>201704161003277_AddDateIdToTaskAndFood.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,6 +81,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201704151316207_InitialCreate.resx">
       <DependentUpon>201704151316207_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704160942141_RemoveTables.resx">
+      <DependentUpon>201704160942141_RemoveTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704161003277_AddDateIdToTaskAndFood.resx">
+      <DependentUpon>201704161003277_AddDateIdToTaskAndFood.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

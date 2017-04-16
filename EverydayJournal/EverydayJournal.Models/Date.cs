@@ -17,7 +17,7 @@
         [Required]
         public DateTime ExactDate { get; set; }
 
-        public int PhysicalConditionId { get; set; }
+        public virtual int PhysicalConditionId { get; set; }
 
         public virtual PhysicalCondition PhysicalCondition { get; set; }
 

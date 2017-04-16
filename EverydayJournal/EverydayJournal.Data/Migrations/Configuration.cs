@@ -19,118 +19,6 @@ namespace EverydayJournal.Data.Migrations
 
             // if (!context.Dates.Any())
             // {
-            //var people = new Person[]
-            //{
-            //    new Person()
-            //    {
-            //        Name = "Ivan Stanislavov",
-            //        Date = new Date() {ExactDate = new DateTime(2017, 4, 15)},
-            //        Foods =
-            //        {
-            //            new Food()
-            //            {
-            //                Date = new Date()
-            //                {
-            //                    ExactDate = new DateTime(2017, 4, 15)
-            //                },
-            //                Name = "Salamche"
-            //            },
-            //            new Food()
-            //            {
-            //                Date = new Date()
-            //                {
-            //                    ExactDate = new DateTime(2017, 4, 14)
-            //                },
-            //                Name = "Avocado salad"
-            //            },
-            //            new Food()
-            //            {
-            //                Date = new Date()
-            //                {
-            //                    ExactDate = new DateTime(2017, 4, 13)
-            //                },
-            //                Name = "Shopska salad with kebapche"
-            //            }
-            //        },
-            //        Tasks =
-            //        {
-            //            new Task()
-            //            {
-            //                Date = new Date() {ExactDate = new DateTime(2017, 4, 15)},
-            //                Name = "Clean the house"
-            //            },
-            //            new Task()
-            //            {
-            //                Date = new Date() {ExactDate = new DateTime(2017, 4, 15)},
-            //                Name = "Go for a walk"
-            //            },
-            //            new Task()
-            //            {
-            //                Date = new Date() {ExactDate = new DateTime(2017, 4, 10)},
-            //                Name = "Check my friend"
-            //            }
-            //        },
-            //        PhysicalCondition =
-            //            new PhysicalCondition()
-            //            {
-            //                ChestSize = 120.00m,
-            //                WaistSize = 90.00m,
-            //                Kilograms = 78.9m
-            //            }
-            //    },
-            //    new Person()
-            //    {
-            //        Name = "Mariika Petrova",
-            //        Date = new Date() {ExactDate = new DateTime(2017, 4, 15)},
-            //        Foods =
-            //        {
-            //            new Food()
-            //            {
-            //                Date = new Date()
-            //                {
-            //                    ExactDate = new DateTime(2017, 4, 15)
-            //                },
-            //                Name = "Marakuya juice"
-            //            },
-            //            new Food()
-            //            {
-            //                Date = new Date()
-            //                {
-            //                    ExactDate = new DateTime(2017, 4, 14)
-            //                },
-            //                Name = "Yogurt"
-            //            },
-            //            new Food()
-            //            {
-            //                Date = new Date()
-            //                {
-            //                    ExactDate = new DateTime(2017, 4, 13)
-            //                },
-            //                Name = "Fruit salad"
-            //            }
-            //        },
-            //        Tasks =
-            //        {
-            //            new Task()
-            //            {
-            //                Date = new Date() {ExactDate = new DateTime(2017, 4, 11)},
-            //                Name = "Take my dog for a walk"
-            //            },
-            //            new Task()
-            //            {
-            //                Date = new Date() {ExactDate = new DateTime(2017, 4, 10)},
-            //                Name = "Finish my project"
-            //            }
-            //        },
-            //        PhysicalCondition =
-            //            new PhysicalCondition()
-            //            {
-            //                ChestSize = 83.2m,
-            //                WaistSize = 60.00m,
-            //                Kilograms = 50.00m
-            //            }
-            //    }
-            //};
             var dates = new Date[]
             {
                 new Date() {ExactDate = new DateTime(2017, 4, 15)},
@@ -154,9 +42,57 @@ namespace EverydayJournal.Data.Migrations
             {
                 context.Dates.AddOrUpdate(d => d.ExactDate, date);
             }
-           
-            context.SaveChanges();
 
+            var tasksNames = new string[]
+            {
+                "Go for a walk",
+                "Clean the house",
+                "Change my diet",
+                "Go to the gym",
+                "Skip gym today",
+                "Buy vegetables",
+                "Finish the project",
+                "Eat healthy",
+                "Cook dinner",
+                "Get my kid from school",
+                "Buy beer",
+                "Do the laundry",
+                "Call mom",
+                "Water the flowers",
+                "Edit my journal",
+                "Drink more water",
+                "Go out with friends",
+                "Search for good restaurant",
+                "Go to dances",
+                "Relax",
+                "Code"
+            };
+
+            var foodsNames = new string[]
+            {
+                "Avocado",
+                "Fruit salad",
+                "Vegetable salad",
+                "Marakuya",
+                "Mango",
+                "Strawberries",
+                "Blueberries",
+                "Shopska salad",
+                "Chicken",
+                "Chicken with rice",
+                "Green vegetables",
+                "Carrots",
+                "Yogurt",
+                "Peppers",
+                "Spinach"
+            };
+
+            for (int i = 0; i < dates.Length; i++)
+            {
+                context.Tasks.AddOrUpdate(t => t.Name, new Task() {Name = tasksNames[i], DateId = i + 1});
+                context.Foods.AddOrUpdate(f => f.Name, new Food() {Name = foodsNames[i], DateId = i + 1});
+            }
+            context.SaveChanges();
             // }
         }
     }

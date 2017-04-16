@@ -49,11 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Afternoon.cs" />
     <Compile Include="Date.cs" />
-    <Compile Include="Evening.cs" />
     <Compile Include="Food.cs" />
-    <Compile Include="Morning.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PhysicalCondition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
