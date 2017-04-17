@@ -1,4 +1,6 @@
-﻿namespace EverydayJournal.Data.Store
+﻿using System.Linq;
+
+namespace EverydayJournal.Data.Store
 {
     using EverydayJournal.Data.Dtos;
     using Models;
@@ -13,7 +15,7 @@
             {
                 foreach (var foodDto in foods)
                 {
-                    if (foodDto.Name == null || foodDto.DateId == null || foodDto.PersonId == null)
+                    if (foodDto.Name == null)
                     {
                         Console.WriteLine("Invalid data format.");
                     }
@@ -33,6 +35,6 @@
 
                 context.SaveChanges();
             }
-        }
+        } 
     }
 }

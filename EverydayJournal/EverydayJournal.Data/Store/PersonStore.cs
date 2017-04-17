@@ -1,4 +1,6 @@
-﻿namespace EverydayJournal.Data.Store
+﻿using System.Linq;
+
+namespace EverydayJournal.Data.Store
 {
     using Dtos;
     using Models;
@@ -37,6 +39,54 @@
                 }
 
                 context.SaveChanges();
+            }
+        }
+
+        public static void AddFoods()
+        {
+            using (var context = new EverydayJournalContext())
+            {
+                var people = context.People.ToList();
+                var foods = context.Foods.ToList();
+
+                int index = 1;
+
+                foreach (var person in people)
+                {
+                    if (index == 9)
+                    {
+                        index = 1;
+                    } 
+
+                    person.Foods.Add(foods[index]);
+                    person.Foods.Add(foods[index + 1]);
+                    
+                    index++;
+                }
+            }
+        }
+
+        public static void AddTasks()
+        {
+            using (var context = new EverydayJournalContext())
+            {
+                var people = context.People.ToList();
+                var tasks = context.Tasks.ToList();
+
+                int index = 1;
+
+                foreach (var person in people)
+                {
+                    if (index == 9)
+                    {
+                        index = 1;
+                    }
+
+                    person.Tasks.Add(tasks[index]);
+                    person.Tasks.Add(tasks[index + 1]);
+
+                    index++;
+                }
             }
         }
     }
