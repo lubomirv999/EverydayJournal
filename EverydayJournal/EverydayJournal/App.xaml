@@ -47,6 +47,15 @@
             <Setter Property="Margin" Value="0,0,50,0"/>
         </Style>
 
+        <!--General style for text boxes in User Profile-->
+        <Style x:Key="profileTextBoxStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="20,0,25,0"/>
+        </Style>
+
         <!--General button style-->
         <Style x:Key="buttonGeneralStyle" TargetType="{x:Type Button}">
             <Setter Property="Height" Value="30"/>

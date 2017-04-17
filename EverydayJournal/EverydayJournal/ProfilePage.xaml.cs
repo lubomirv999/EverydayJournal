@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EverydayJournal.Data;
 
 namespace EverydayJournal
 {
@@ -23,6 +24,34 @@ namespace EverydayJournal
         public ProfilePage()
         {
             InitializeComponent();
+
+            //Loading logged used credentials in the text boxes
+            using (var context = new EverydayJournalContext())
+            {
+                var username = context.People.Where(n => n.Name == "martotko").FirstOrDefault();
+                UsernameChange.Text = username.Name;
+                EmailChange.Text = username.Email;
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            using (var context = new EverydayJournalContext())
+            {
+                //Getting current values of the text boxes
+                var username = UsernameChange.Text;
+                var email = EmailChange.Text;
+                var password = Password.Text;
+                var passwordConfirmation = ConfirmPassword.Text;
+
+                if (password == passwordConfirmation)
+                {
+                    //Finding user by ID and updating him
+                    var currentUser = context.People.Find(21);
+                    currentUser.Name = username;
+                    currentUser.Email = email;
+                }
+            }
         }
     }
 }

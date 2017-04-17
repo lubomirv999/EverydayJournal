@@ -1,21 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using EverydayJournal.Data;
-
-namespace EverydayJournal
+﻿namespace EverydayJournal
 {
+    using System.Windows;
+    using System.Windows.Controls;
+    using Data;
+    using System.Linq;
+
     /// <summary>
     /// Interaction logic for LoginPage.xaml
     /// </summary>
@@ -42,27 +31,22 @@ namespace EverydayJournal
                 var username = UsernameInput.Text;
                 var password = PasswordInput.Password;
 
-                //This is for test purposes only and should be removed when the below Login check is ready
-                UserHomePage userHomePage = new UserHomePage();
-                this.NavigationService.Navigate(userHomePage);
+                //Check if the data successfully match in the database 
+                if (context.People.Any(a => a.Password == password && a.Name == username))
+                {
+                    MessageBox.Show("Successfully logged!");
 
-
-                //This check should work when the database is ready
-                //if (context.People.Any(a => a.Password == password && a.Name == username))
-                //{
-                //    MessageBox.Show("Successfully logged!");
-
-                //    //Navigate to UserHomePage
-                //    UserHomePage userHomePage = new UserHomePage();
-                //    this.NavigationService.Navigate(userHomePage);
-                //}
-                //else
-                //{
-                //    //Invalid credentials
-                //    MessageBox.Show("Invalid Username or Password!");
-                //    UsernameInput.Clear();
-                //    PasswordInput.Clear();
-                //}
+                    //Navigate to UserHomePage
+                    UserHomePage userHomePage = new UserHomePage();
+                    this.NavigationService.Navigate(userHomePage);
+                }
+                else
+                {
+                    //Invalid credentials
+                    MessageBox.Show("Invalid Username or Password!");
+                    UsernameInput.Clear();
+                    PasswordInput.Clear();
+                }
             }
         }
     }

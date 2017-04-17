@@ -12,23 +12,23 @@ namespace EverydayJournal.Import
             // Date must contain collection of food and tasks in the JSON - idk if needs
 
             //Importing Data
-
-            //Import Date
+            
+            ////Import Date
             //JsonImport.ImportDates();
 
-            //Import People
+            ////Import People
             //JsonImport.ImportPeople();  
 
-            //Import Food
+            ////Import Food
             //JsonImport.ImportFoods(); 
 
-            //Import Tasks
+            ////Import Tasks
             //JsonImport.ImportTasks();
 
-            //Import random foods to people
+            ////Import random foods to people
             //PersonStore.AddFoods();
 
-            //Import random tasks to people
+            ////Import random tasks to people
             //PersonStore.AddTasks();
 
             //Check if addfoods and addtasks works properly
@@ -37,7 +37,7 @@ namespace EverydayJournal.Import
             //foreach (var person in people)
             //{
             //    Console.WriteLine(person.Name);
-               
+
 
             //    foreach (var food in person.Foods)
             //    {

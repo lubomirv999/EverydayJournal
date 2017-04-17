@@ -16,6 +16,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <!--Title-->
@@ -47,9 +48,10 @@
             <!--Physical Conditions-->
             <Label Grid.Column="1" Grid.Row="1" Style="{StaticResource labelsUserMenu}">Physical Conditions</Label>
             <Button Grid.Column="1" Grid.Row="1" Style="{StaticResource buttonGeneralStyle}" Click="Button_Click_PhysicalConditions">View</Button>
-            
-            
         </Grid>
+        
+        <!--Logout button-->
+        <Button Grid.Row="2" Style="{StaticResource buttonGeneralStyle}" Margin="0,10,0,10">Logout</Button>
         <!--Background-->
         <Grid.Background>
             <ImageBrush ImageSource="Images/background.jpg"/>

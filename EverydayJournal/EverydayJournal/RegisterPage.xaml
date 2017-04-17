@@ -18,25 +18,21 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
         <!--Title of the page-->
         <Label Grid.Column="0" Grid.Row="0" Style="{StaticResource titleHeaderStyle}">Register</Label>
-        <!--Firstname label and textBox-->
-        <Label Grid.Column="0" Grid.Row="1" Style="{StaticResource formLableStyle}">FirstName</Label>
-        <TextBox Grid.Column="0" Grid.Row="1" Style="{StaticResource generalTextBoxStyle}"></TextBox>
-        <!--Lastname label and textBox-->
-        <Label Grid.Column="0" Grid.Row="2" Style="{StaticResource formLableStyle}">LastName</Label>
-        <TextBox Grid.Column="0" Grid.Row="2" Style="{StaticResource generalTextBoxStyle}"></TextBox>
+        <!--Name label and textBox-->
+        <Label Grid.Column="0" Grid.Row="1" Style="{StaticResource formLableStyle}">Name</Label>
+        <TextBox x:Name="NameInput" Grid.Column="0" Grid.Row="1" Style="{StaticResource generalTextBoxStyle}"></TextBox>
         <!--Password labe and passwordBox-->
-        <Label Grid.Column="0" Grid.Row="3" Style="{StaticResource formLableStyle}">Password</Label>
-        <PasswordBox Grid.Column="0" Grid.Row="3" Style="{StaticResource passwordBoxStyle}"></PasswordBox>
+        <Label Grid.Column="0" Grid.Row="2" Style="{StaticResource formLableStyle}">Password</Label>
+        <PasswordBox x:Name="PasswordInput" Grid.Column="0" Grid.Row="2" Style="{StaticResource passwordBoxStyle}"></PasswordBox>
         <!--Email label and textBox-->
-        <Label Grid.Column="0" Grid.Row="4" Style="{StaticResource formLableStyle}">Email</Label>
-        <TextBox Grid.Column="0" Grid.Row="4" Style="{StaticResource generalTextBoxStyle}"></TextBox>
+        <Label Grid.Column="0" Grid.Row="3" Style="{StaticResource formLableStyle}">Email</Label>
+        <TextBox x:Name="EmailInput" Grid.Column="0" Grid.Row="3" Style="{StaticResource generalTextBoxStyle}"></TextBox>
 
         <!--Submit register button-->
-        <Button Grid.Column="0" Grid.Row="5" Style="{StaticResource buttonGeneralStyle}">Register</Button>
+        <Button Grid.Column="0" Grid.Row="4" Style="{StaticResource buttonGeneralStyle}" Click="RegisterSubmit_Click">Register</Button>
         <!--Background-->
         <Grid.Background>
             <ImageBrush ImageSource="Images/background.jpg"/>
