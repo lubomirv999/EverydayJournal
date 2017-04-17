@@ -4,9 +4,9 @@
     using System;
     using System.Linq;
 
-    class Startup
+    public class Startup
     {
-        static void Main(string[] args)
+        public static void Main()
         {
             EverydayJournalContext.Create();
             var context = new EverydayJournalContext();

@@ -17,10 +17,6 @@
         [Required]
         public DateTime ExactDate { get; set; }
 
-        public virtual int PhysicalConditionId { get; set; }
-
-        public virtual PhysicalCondition PhysicalCondition { get; set; }
-
         public virtual ICollection<Food> Foods { get; set; }
 
         public virtual ICollection<Task> Tasks { get; set; }

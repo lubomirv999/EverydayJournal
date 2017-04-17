@@ -2,51 +2,61 @@
   {
     "Name": "John",
     "Email": "Gizis@abv.bg",
-	"Password": "Sample"
+	"Password": "Sample",
+	"PhysicalCondition": "Normal"
   },
   {
     "Name": "Pesho",
     "Email": "Peshov@abv.bg",
-	"Password": "SamplePesho"
+	"Password": "SamplePesho",
+	"PhysicalCondition": "Fat"
   },
   {
     "Name": "Kiro",
     "Email": "Kirov@abv.bg",
-	"Password": "SampleKiro"
+	"Password": "SampleKiro",
+	"PhysicalCondition": "Fat"
   },
   {
     "Name": "Ivan",
     "Email": "Ivanov@abv.bg",
-	"Password": "SampleIvan"
+	"Password": "SampleIvan",
+	"PhysicalCondition": "Slim"
   },
   {
     "Name": "Dragan",
     "Email": "Draganov@abv.bg",
-	"Password": "SampleDragan"
+	"Password": "SampleDragan",
+	"PhysicalCondition": "Slim"
   },
   {
     "Name": "Bobby",
     "Email": "Fisher@abv.bg",
-	"Password": "SampleBobby"
+	"Password": "SampleBobby",
+	"PhysicalCondition": "Obese"
   },
   {
     "Name": "Penko",
     "Email": "Penkov@abv.bg",
-	"Password": "SamplePenko"
+	"Password": "SamplePenko",
+	"PhysicalCondition": "Normal"
   },
   {
     "Name": "Misho",
     "Email": "Mishov@abv.bg",
-	"Password": "SampleMisho"
+	"Password": "SampleMisho",
+	"PhysicalCondition": "Normal"
   },
   {
     "Name": "Sample",
     "Email": "Sample@abv.bg",
-	"Password": "SampleSample"
+	"Password": "SampleSample",
+	"PhysicalCondition": "Anorexic"
   },
   {
     "Name": "Final",
     "Email": "Finalov@abv.bg",
-	"Password": "SampleFinal"
+	"Password": "SampleFinal",
+	"PhysicalCondition": "Normal"
   }
 ]

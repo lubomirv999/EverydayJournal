@@ -1,6 +1,5 @@
 ﻿namespace EverydayJournal.Models
 {
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
     public class Food
@@ -14,6 +13,8 @@
 
         public virtual Date Date { get; set; }
 
-        public virtual ICollection<Person> People { get; set; }
+        public virtual int PersonId { get; set; }
+
+        public virtual Person Person { get; set; }
     }
 }

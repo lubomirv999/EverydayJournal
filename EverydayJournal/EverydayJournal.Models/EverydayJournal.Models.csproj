@@ -52,7 +52,6 @@
     <Compile Include="Date.cs" />
     <Compile Include="Food.cs" />
     <Compile Include="Person.cs" />
-    <Compile Include="PhysicalCondition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Task.cs" />
   </ItemGroup>

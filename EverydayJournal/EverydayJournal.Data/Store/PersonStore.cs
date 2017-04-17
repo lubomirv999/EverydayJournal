@@ -14,21 +14,21 @@
             {
                 foreach (var personDto in people)
                 {
-                    if (personDto.Name == null || personDto.Email == null || personDto.Password == null)
+                    if (personDto.Name == null || 
+                        personDto.Email == null || 
+                        personDto.Password == null ||
+                        personDto.PhysicalCondition == null)
                     {
                         Console.WriteLine("Invalid data format.");
                     }
                     else
                     {
-                        var firstName = PersonName(personDto.Name);
-                        var email = PersonEmail(personDto.Email);
-                        var password = PersonPassword(personDto.Password);
-
                         var person = new Person
                         {
                             Name = personDto.Name,
                             Email = personDto.Email,
-                            Password = personDto.Password
+                            Password = personDto.Password,
+                            PhysicalCondition = personDto.PhysicalCondition
                         };
 
                         context.People.Add(person);
@@ -41,7 +41,7 @@
             }
         }
 
-        private static object PersonPassword(string password)
+        private static Person GetPersonByPassword(string password)
         {
             using (var context = new EverydayJournalContext())
             {
@@ -49,7 +49,7 @@
             }
         }
 
-        private static object PersonEmail(string email)
+        private static Person GetPersonByEmail(string email)
         {
             using (var context = new EverydayJournalContext())
             {
@@ -57,7 +57,7 @@
             }
         }
 
-        private static object PersonName(string name)
+        private static Person GetPersonByName(string name)
         {
             using (var context = new EverydayJournalContext())
             {

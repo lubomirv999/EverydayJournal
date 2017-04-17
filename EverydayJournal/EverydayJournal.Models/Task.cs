@@ -13,7 +13,7 @@
 
         public virtual Date Date { get; set; }
 
-        public int PersonId { get; set; }
+        public virtual int PersonId { get; set; }
 
         public virtual Person Person { get; set; }
     }

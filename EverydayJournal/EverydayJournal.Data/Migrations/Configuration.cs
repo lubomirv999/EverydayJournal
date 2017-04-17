@@ -38,10 +38,10 @@ namespace EverydayJournal.Data.Migrations
                 new Date() {ExactDate = new DateTime(2017, 4, 1)}
             };
 
-            foreach (var date in dates)
-            {
-                context.Dates.AddOrUpdate(d => d.ExactDate, date);
-            }
+            //foreach (var date in dates)
+            //{
+            //    context.Dates.AddOrUpdate(d => d.ExactDate, date);
+            //}
 
             var tasksNames = new string[]
             {
@@ -87,12 +87,12 @@ namespace EverydayJournal.Data.Migrations
                 "Spinach"
             };
 
-            for (int i = 0; i < dates.Length; i++)
-            {
-                context.Tasks.AddOrUpdate(t => t.Name, new Task() {Name = tasksNames[i], DateId = i + 1});
-                context.Foods.AddOrUpdate(f => f.Name, new Food() {Name = foodsNames[i], DateId = i + 1});
-            }
-            context.SaveChanges();
+            //for (int i = 0; i < dates.Length; i++)
+            //{
+            //    context.Tasks.AddOrUpdate(t => t.Name, new Task() {Name = tasksNames[i], DateId = i + 1});
+            //    context.Foods.AddOrUpdate(f => f.Name, new Food() {Name = foodsNames[i], DateId = i + 1});
+            //}
+            //context.SaveChanges();
             // }
         }
     }

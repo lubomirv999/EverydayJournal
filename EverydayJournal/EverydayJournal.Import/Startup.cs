@@ -2,15 +2,12 @@
 {
     public class Startup
     {
-        static void Main(string[] args)
+        public static void Main()
         {
             //Importing Data
 
             //Import People
-            //JsonImport.ImportPeople();
-
-            //Import Conditions
-            //JsonImport.ImportConditions();
+            //JsonImport.ImportPeople();       
         }
     }
 }

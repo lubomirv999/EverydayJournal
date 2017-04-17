@@ -20,8 +20,6 @@
 
         public virtual ICollection<Task> Tasks { get; set; }
 
-        public int PhysicalConditionId { get; set; }
-
-        public virtual PhysicalCondition PhysicalCondition { get; set; }
+        public string PhysicalCondition { get; set; }
     }
 }
