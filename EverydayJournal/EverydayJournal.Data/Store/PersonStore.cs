@@ -4,7 +4,6 @@
     using Models;
     using System;
     using System.Collections.Generic;
-    using System.Linq;
 
     public class PersonStore
     {
@@ -38,30 +37,6 @@
                 }
 
                 context.SaveChanges();
-            }
-        }
-
-        private static Person GetPersonByPassword(string password)
-        {
-            using (var context = new EverydayJournalContext())
-            {
-                return context.People.FirstOrDefault(a => a.Password == password);
-            }
-        }
-
-        private static Person GetPersonByEmail(string email)
-        {
-            using (var context = new EverydayJournalContext())
-            {
-                return context.People.FirstOrDefault(a => a.Email == email);
-            }
-        }
-
-        private static Person GetPersonByName(string name)
-        {
-            using (var context = new EverydayJournalContext())
-            {
-                return context.People.FirstOrDefault(a => a.Name == name);
             }
         }
     }

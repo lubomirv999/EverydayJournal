@@ -81,7 +81,11 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Dtos\DateDto.cs" />
+    <Compile Include="Store\DateStore.cs" />
+    <Compile Include="Store\FoodStore.cs" />
     <Compile Include="Store\PersonStore.cs" />
+    <Compile Include="Store\TaskStore.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

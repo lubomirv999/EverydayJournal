@@ -2,8 +2,10 @@
 {
     public class TaskDto
     {
-        public int Id { get; set; }
-
         public string Name { get; set; }
+
+        public virtual int DateId { get; set; }
+
+        public virtual int PersonId { get; set; }
     }
 }
