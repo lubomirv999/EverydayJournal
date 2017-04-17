@@ -20,10 +20,6 @@
 
         public virtual ICollection<Task> Tasks { get; set; }
 
-        public int DateId { get; set; }
-
-        public virtual Date Date { get; set; }
-
         public int PhysicalConditionId { get; set; }
 
         public virtual PhysicalCondition PhysicalCondition { get; set; }

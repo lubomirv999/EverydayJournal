@@ -23,11 +23,6 @@ namespace EverydayJournal.Data
                 .WithMany(d => d.Foods)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<PhysicalCondition>()
-                .HasRequired(p => p.ConditionByDate)
-                .WithOptional(d => d.PhysicalCondition)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<Person>()
                 .HasMany(p => p.Foods)
                 .WithMany(f => f.People)

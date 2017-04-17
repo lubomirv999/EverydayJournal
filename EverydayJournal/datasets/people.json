@@ -1,0 +1,52 @@
+[
+  {
+    "Name": "John",
+    "Email": "Gizis@abv.bg",
+	"Password": "Sample"
+  },
+  {
+    "Name": "Pesho",
+    "Email": "Peshov@abv.bg",
+	"Password": "SamplePesho"
+  },
+  {
+    "Name": "Kiro",
+    "Email": "Kirov@abv.bg",
+	"Password": "SampleKiro"
+  },
+  {
+    "Name": "Ivan",
+    "Email": "Ivanov@abv.bg",
+	"Password": "SampleIvan"
+  },
+  {
+    "Name": "Dragan",
+    "Email": "Draganov@abv.bg",
+	"Password": "SampleDragan"
+  },
+  {
+    "Name": "Bobby",
+    "Email": "Fisher@abv.bg",
+	"Password": "SampleBobby"
+  },
+  {
+    "Name": "Penko",
+    "Email": "Penkov@abv.bg",
+	"Password": "SamplePenko"
+  },
+  {
+    "Name": "Misho",
+    "Email": "Mishov@abv.bg",
+	"Password": "SampleMisho"
+  },
+  {
+    "Name": "Sample",
+    "Email": "Sample@abv.bg",
+	"Password": "SampleSample"
+  },
+  {
+    "Name": "Final",
+    "Email": "Finalov@abv.bg",
+	"Password": "SampleFinal"
+  }
+]

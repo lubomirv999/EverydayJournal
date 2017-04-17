@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EverydayJournal", "Everyday
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EverydayJournal.Client", "EverydayJournal.Client\EverydayJournal.Client.csproj", "{BD3DAB75-FE3E-4C8A-BA79-D3FD13D9819C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EverydayJournal.Import", "EverydayJournal.Import\EverydayJournal.Import.csproj", "{59620ACE-D64E-451E-9A44-B91C1498976B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{BD3DAB75-FE3E-4C8A-BA79-D3FD13D9819C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD3DAB75-FE3E-4C8A-BA79-D3FD13D9819C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD3DAB75-FE3E-4C8A-BA79-D3FD13D9819C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59620ACE-D64E-451E-9A44-B91C1498976B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59620ACE-D64E-451E-9A44-B91C1498976B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59620ACE-D64E-451E-9A44-B91C1498976B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59620ACE-D64E-451E-9A44-B91C1498976B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

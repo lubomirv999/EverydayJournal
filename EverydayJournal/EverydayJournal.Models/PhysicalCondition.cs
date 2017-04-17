@@ -1,17 +1,14 @@
 ﻿namespace EverydayJournal.Models
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class PhysicalCondition
     {
         public int Id { get; set; }
 
-        public decimal ChestSize { get; set; }
+        [Required]
+        public string Name { get; set; }
 
-        public decimal WaistSize { get; set; }
-
-        public decimal Kilograms { get; set; }
-
-        public int ConditionByDateId { get; set; }
-
-        public virtual Date ConditionByDate { get; set; }
+        public string Kilograms { get; set; }
     }
 }
