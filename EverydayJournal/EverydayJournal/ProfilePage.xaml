@@ -31,7 +31,7 @@
             </Grid.ColumnDefinitions>
             <!--Label and text box of the User-->
             <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource titleHeaderStyle}">Username</Label>
-            <TextBox x:Name="UsernameChange" Grid.Row="1" Grid.Column="0" Style="{StaticResource profileTextBoxStyle}" TextChanged="Username_TextBox"></TextBox>
+            <TextBox x:Name="UsernameChange" Grid.Row="1" Grid.Column="0" Style="{StaticResource profileTextBoxStyle}"></TextBox>
             <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource titleHeaderStyle}">Email</Label>
             <TextBox x:Name="EmailChange" Grid.Row="1" Grid.Column="1" Style="{StaticResource profileTextBoxStyle}"></TextBox>
         </Grid>

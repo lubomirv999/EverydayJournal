@@ -14,7 +14,7 @@ namespace EverydayJournal.Import
             //Importing Data
             
             ////Import Date
-            //JsonImport.ImportDates();
+            //ImportDates();
 
             ////Import People
             //JsonImport.ImportPeople();  
