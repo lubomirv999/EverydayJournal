@@ -46,7 +46,7 @@
             <Button Grid.Column="0" Grid.Row="1" Style="{StaticResource buttonGeneralStyle}" Click="Button_Click_FoodByDate">View</Button>
             
             <!--Physical Conditions-->
-            <Label Grid.Column="1" Grid.Row="1" Style="{StaticResource labelsUserMenu}">Physical Conditions</Label>
+            <Label Grid.Column="1" Grid.Row="1" Style="{StaticResource labelsUserMenu}">Physical Condition</Label>
             <Button Grid.Column="1" Grid.Row="1" Style="{StaticResource buttonGeneralStyle}" Click="Button_Click_PhysicalConditions">View</Button>
         </Grid>
         

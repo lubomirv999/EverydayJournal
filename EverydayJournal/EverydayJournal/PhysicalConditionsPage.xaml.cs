@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace EverydayJournal
 {
+    using System.Windows.Controls;
+    using Data;
+    using System.Linq;
+
     /// <summary>
     /// Interaction logic for PhysicalConditionsPage.xaml
     /// </summary>
@@ -23,6 +16,29 @@ namespace EverydayJournal
         public PhysicalConditionsPage()
         {
             InitializeComponent();
+
+            //Loading the current condition in the text box
+            using (var context = new EverydayJournalContext())
+            {
+                var username = context.People.Find(20);
+                PhysicalConditionTextBox.Text = username.PhysicalCondition;
+            }
+        }
+
+        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            //Updating the condition with the text from the text box
+            using (var context = new EverydayJournalContext())
+            {
+                var updatedCondition = PhysicalConditionTextBox.Text;
+                //TODO
+                //Updating the user with ID=20. Should be changed with the currently logged User
+                context.People.Find(20).PhysicalCondition = updatedCondition;
+                context.SaveChanges();
+
+                MessageBox.Show("Successfully updated condition!");
+                PhysicalConditionTextBox.Clear();
+            }
         }
     }
 }

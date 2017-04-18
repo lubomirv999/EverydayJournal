@@ -37,6 +37,7 @@ namespace EverydayJournal
             }
             else
             {
+                //TODO registered user should be saved while is logged
                 using (var context = new EverydayJournalContext())
                 {
                     try

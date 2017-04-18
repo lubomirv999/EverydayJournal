@@ -35,7 +35,7 @@
                 if (context.People.Any(a => a.Password == password && a.Name == username))
                 {
                     MessageBox.Show("Successfully logged!");
-
+                    //TODO the user credentials should be saved while the user is logged in
                     //Navigate to UserHomePage
                     UserHomePage userHomePage = new UserHomePage();
                     this.NavigationService.Navigate(userHomePage);

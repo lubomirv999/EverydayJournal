@@ -19,6 +19,10 @@
         </Grid.RowDefinitions>
         <!--Title-->
         <Label Grid.Row="0" Style="{StaticResource titleHeaderStyle}">Physical Conditions</Label>
+        
+        <Label Grid.Row="1" Style="{StaticResource labelsUserMenu}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30">Physical Condition</Label>   
+        <TextBox x:Name="PhysicalConditionTextBox" Grid.Row="1" Style="{StaticResource profileTextBoxStyle}"></TextBox>
+        <Button Grid.Row="2" Style="{StaticResource buttonGeneralStyle}" Click="Button_Click">Save changes</Button>
         <!--Background-->
         <Grid.Background>
             <ImageBrush ImageSource="Images/background.jpg"/>

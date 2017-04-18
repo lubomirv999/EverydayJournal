@@ -1,21 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using EverydayJournal.Data;
-
-namespace EverydayJournal
+﻿namespace EverydayJournal
 {
+    using System.Linq;
+    using System.Windows;
+    using System.Windows.Controls;
+    using Data;
+
     /// <summary>
     /// Interaction logic for ProfilePage.xaml
     /// </summary>
@@ -28,6 +17,7 @@ namespace EverydayJournal
             //Loading logged used credentials in the text boxes
             using (var context = new EverydayJournalContext())
             {
+                //TODO logged user should be used here
                 var username = context.People.Where(n => n.Name == "martotko").FirstOrDefault();
                 UsernameChange.Text = username.Name;
                 EmailChange.Text = username.Email;
@@ -46,10 +36,16 @@ namespace EverydayJournal
 
                 if (password == passwordConfirmation)
                 {
-                    //Finding user by ID and updating him
-                    var currentUser = context.People.Find(21);
-                    currentUser.Name = username;
-                    currentUser.Email = email;
+                    //TODO Should be changed with the currently logged User
+                    //Updating the user with ID=22 for the tests
+                    context.People.Find(21).Name = username;
+                    context.People.Find(21).Email = email;
+
+                    context.SaveChanges();
+
+                    MessageBox.Show("Successfully updated!");
+                    UsernameChange.Clear();
+                    EmailChange.Clear();
                 }
             }
         }
