@@ -9,7 +9,7 @@ Everyday Jorunal can help for living a healthy life if the user has some individ
   - **Read** information about current day/choosen day
   - **Update** information about the food/tasks of choosen day
   - **Delete** information about the food/tasks of choosen day
-- **Console-Based** application
+- **WPF-Based** application
 - **Underlying Database** - MS SQL Server
 - **Object-Relational Mapping technology** - Entity Framework
 - **Version Control System** - Git
