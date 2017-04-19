@@ -9,17 +9,21 @@
       Title="ProfilePage">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        
         <!--Title-->
-        <Label Grid.Row="0" Style="{StaticResource titleHeaderStyle}">Profile Page</Label>
+        <Label x:Name="ProfileTitle" 
+               Grid.Row="0" 
+               Style="{StaticResource TitleHeaderStyle}"/>
+        <Button Grid.Row="0" 
+                Style="{StaticResource ButtonMainMenu}"
+                Content="Back to Main Menu" Click="Button_Click_BackToMainMenu"/>
+        
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -29,26 +33,62 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <!--Label and text box of the User-->
-            <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource titleHeaderStyle}">Username</Label>
-            <TextBox x:Name="UsernameChange" Grid.Row="1" Grid.Column="0" Style="{StaticResource profileTextBoxStyle}"></TextBox>
-            <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource titleHeaderStyle}">Email</Label>
-            <TextBox x:Name="EmailChange" Grid.Row="1" Grid.Column="1" Style="{StaticResource profileTextBoxStyle}"></TextBox>
+            
+            <!--Username Label and Text Box-->
+            <Label Grid.Row="0" 
+                   Grid.Column="0" 
+                   Style="{StaticResource TitleHeaderStyle}"
+                   Content="Username"/>
+            <TextBox x:Name="UsernameChange" 
+                     Grid.Row="1" 
+                     Grid.Column="0" 
+                     Style="{StaticResource ProfileTextBoxStyle}"/>
+            
+            <!--Email Label and Text Box-->
+            <Label Grid.Row="0" 
+                   Grid.Column="1" 
+                   Style="{StaticResource TitleHeaderStyle}"
+                   Content="Email"/>
+            <TextBox x:Name="EmailChange" 
+                     Grid.Row="1" 
+                     Grid.Column="1" 
+                     Style="{StaticResource ProfileTextBoxStyle}"/>
+            
         </Grid>
         <Grid Grid.Row="2">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+            
             <!--Password-->
-            <Label Grid.Row="0" HorizontalAlignment="Left" Margin="30,0,0,0" Style="{StaticResource titleHeaderStyle}">Password</Label>
-            <TextBox x:Name="Password" Grid.Row="0" HorizontalAlignment="Right" Style="{StaticResource profileTextBoxStyle}"></TextBox>
+            <Label Grid.Row="0" 
+                   HorizontalAlignment="Left" 
+                   Margin="30,0,0,0" 
+                   Style="{StaticResource TitleHeaderStyle}"
+                   Content="Password"/>
+            <PasswordBox x:Name="Password" 
+                         Grid.Row="0" 
+                         Style="{StaticResource ProfilePasswordBoxStyle}"/>
+            
             <!--Confirm Password-->
-            <Label HorizontalAlignment="Left" Margin="30,0,0,0" Grid.Row="1" Style="{StaticResource titleHeaderStyle}">Confirm Password</Label>
-            <TextBox x:Name="ConfirmPassword" Grid.Row="1" HorizontalAlignment="Right" Style="{StaticResource profileTextBoxStyle}"></TextBox>
+            <Label HorizontalAlignment="Left" 
+                   Margin="30,0,0,0" 
+                   Grid.Row="1" 
+                   Style="{StaticResource TitleHeaderStyle}"
+                   Content="Confirm Password"/>
+            <PasswordBox x:Name="ConfirmPassword" 
+                         Grid.Row="1" 
+                         Style="{StaticResource ProfilePasswordBoxStyle}"/>
+            
         </Grid>
         <!--Button for saving the changes-->
-        <Button Grid.Row="3" Style="{StaticResource buttonGeneralStyle}" Margin="0,10,0,10" Click="Button_Click">Save changes</Button>
+        <Button Grid.Row="3" 
+                Style="{StaticResource ButtonGeneralStyle}" 
+                Margin="0,10,0,10" 
+                Click="Button_Click_SaveChanges"
+                Content="Save changes"/>
+        
         <!--Background-->
         <Grid.Background>
             <ImageBrush ImageSource="Images/background.jpg"/>

@@ -38,10 +38,10 @@
                 //Check if the data successfully match in the database 
                 if (context.People.Any(a => a.Password == password && a.Name == username))
                 {
-                    var userId =
-                        context.People.Where(a => a.Password == password && a.Name == username)
-                            .Select(i =>new { i.Id, i.Name})
-                            .FirstOrDefault();
+                    var userId = context.People
+                        .Where(a => a.Password == password && a.Name == username)
+                        .Select(i =>new { i.Id, i.Name})
+                        .FirstOrDefault();
 
                     MessageBox.Show("Successfully logged!");
                     //Saving Id and UserName for the current session.
@@ -51,7 +51,7 @@
                     //Navigate to UserHomePage
 
                     UserHomePage userHomePage = new UserHomePage();
-                    this.NavigationService.Navigate(userHomePage);
+                    this.NavigationService?.Navigate(userHomePage);
                 }
                 else
                 {

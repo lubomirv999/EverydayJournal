@@ -1,13 +1,12 @@
-﻿using System;
-using System.Linq;
-using EverydayJournal.Models;
-using EverydayJournal.Utilities;
-
-namespace EverydayJournal
+﻿namespace EverydayJournal
 {
     using System.Windows;
     using System.Windows.Controls;
     using Data;
+    using System;
+    using System.Linq;
+    using Models;
+    using Utilities;
 
     /// <summary>
     /// Interaction logic for RegisterPage.xaml
@@ -18,32 +17,33 @@ namespace EverydayJournal
         {
             InitializeComponent();
 
-            //Clear User session before logging again
+            //Clear User session before register
             LoggerUtility.UserName = "";
             LoggerUtility.UserId = null;
         }
 
         private void RegisterSubmit_Click(object sender, RoutedEventArgs e)
         {
+            //Getting the data from the page
             var name = NameInput.Text;
             var password = PasswordInput.Password;
             var email = EmailInput.Text;
 
+            //Check before using adding to DB
             if (name.Length < 4)
             {
                 MessageBox.Show("The name should be greater than 3 symbols!");
             }
-            else if (password.Length < 6)
+            else if (password.Length < 5)
             {
-                MessageBox.Show("The password should be greater than 6 symbols!");
+                MessageBox.Show("The password should be greater than 4 symbols!");
             }
-            else if (!email.Contains("@"))
+            else if (!email.Contains("@") || email.Length < 6)
             {
                 MessageBox.Show("Invalid Email!");
             }
             else
             {
-                //TODO registered user should be saved while is logged
                 using (var context = new EverydayJournalContext())
                 {
                     try
@@ -58,12 +58,13 @@ namespace EverydayJournal
 
                         context.SaveChanges();
                         MessageBox.Show("Registration successful!");
+
                         //Saving Id and UserName for the current session.
-                        LoggerUtility.UserId = context.People.Where(n=>n.Name == name).Select(x=>x.Id).FirstOrDefault();
+                        LoggerUtility.UserId = context.People.Where(n => n.Name == name).Select(x => x.Id).FirstOrDefault();
                         LoggerUtility.UserName = name;
 
                         UserHomePage homePage = new UserHomePage();
-                        this.NavigationService.Navigate(homePage);
+                        this.NavigationService?.Navigate(homePage);
                     }
                     catch (Exception)
                     {
@@ -74,6 +75,12 @@ namespace EverydayJournal
                     }
                 }
             }
+        }
+
+        private void Button_Click_BackToLogin(object sender, RoutedEventArgs e)
+        {
+            LoginPage loginPage = new LoginPage();
+            this.NavigationService?.Navigate(loginPage);
         }
     }
 }

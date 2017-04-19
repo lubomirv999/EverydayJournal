@@ -9,10 +9,6 @@
       Title="UserHomePage">
 
     <Grid>
-        <!--General row andcolumn definition of the page-->
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
@@ -20,9 +16,10 @@
         </Grid.RowDefinitions>
 
         <!--Title-->
-        <Label Grid.Row="0" Style="{StaticResource titleHeaderStyle}">User Home Page</Label>
+        <Label x:Name="HomePageTitle"
+               Grid.Row="0" 
+               Style="{StaticResource TitleHeaderStyle}"/>
 
-        <!--Making new grid to split the second row with two columns-->
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -34,24 +31,57 @@
             </Grid.RowDefinitions>
             
             <!--Profile-->
-            <Label Grid.Column="0" Grid.Row="0" Style="{StaticResource labelsUserMenu}">Profile</Label>
-            <Button Grid.Column="0" Grid.Row="0" Style="{StaticResource buttonGeneralStyle}" Click="Button_Click_Profile">View</Button>
-            
+            <Label Grid.Column="0" 
+                   Grid.Row="0" 
+                   Style="{StaticResource LabelUserMenu}"
+                   Content="Profile"/>
+            <Button Grid.Column="0" 
+                    Grid.Row="0" 
+                    Style="{StaticResource ButtonHomePage}" 
+                    Click="Button_Click_Profile"
+                    Content="View"/>
+
             <!--Tasks-->
-            <Label Grid.Column="1" Grid.Row="0" Style="{StaticResource labelsUserMenu}">Taks</Label>
-            <Button Grid.Column="1" Grid.Row="0" Style="{StaticResource buttonGeneralStyle}" Click="Button_Click_Tasks">View</Button>
-            
+            <Label Grid.Column="1" 
+                   Grid.Row="0" 
+                   Style="{StaticResource LabelUserMenu}"
+                   Content="Tasks"/>
+            <Button Grid.Column="1" 
+                    Grid.Row="0" 
+                    Style="{StaticResource ButtonHomePage}" 
+                    Click="Button_Click_Tasks"
+                    Content="View"/>
+
             <!--Foods by Date-->
-            <Label Grid.Column="0" Grid.Row="1" Style="{StaticResource labelsUserMenu}">Foods by Date</Label>
-            <Button Grid.Column="0" Grid.Row="1" Style="{StaticResource buttonGeneralStyle}" Click="Button_Click_FoodByDate">View</Button>
+            <Label Grid.Column="0" 
+                   Grid.Row="1" 
+                   Style="{StaticResource LabelUserMenu}"
+                   Content="Foods"/>
+            <Button Grid.Column="0" 
+                    Grid.Row="1" 
+                    Style="{StaticResource ButtonHomePage}" 
+                    Click="Button_Click_FoodByDate"
+                    Content="View"/>
             
             <!--Physical Conditions-->
-            <Label Grid.Column="1" Grid.Row="1" Style="{StaticResource labelsUserMenu}">Physical Condition</Label>
-            <Button Grid.Column="1" Grid.Row="1" Style="{StaticResource buttonGeneralStyle}" Click="Button_Click_PhysicalConditions">View</Button>
+            <Label Grid.Column="1" 
+                   Grid.Row="1" 
+                   Style="{StaticResource LabelUserMenu}"
+                   Content="Physical Condition"/>
+            <Button Grid.Column="1" 
+                    Grid.Row="1" 
+                    Style="{StaticResource ButtonHomePage}" 
+                    Click="Button_Click_PhysicalConditions"
+                    Content="View"/>
         </Grid>
         
         <!--Logout button-->
-        <Button Grid.Row="2" Style="{StaticResource buttonGeneralStyle}" Margin="0,10,0,10" Click="Button_Click_Logout">Logout</Button>
+        <Button Grid.Row="2" 
+                Style="{StaticResource ButtonGeneralStyle}" 
+                Margin="0,10,0,10" 
+                Click="Button_Click_Logout"
+                Content="Logout"/>
+        
         <!--Background-->
         <Grid.Background>
             <ImageBrush ImageSource="Images/background.jpg"/>

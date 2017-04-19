@@ -21,19 +21,19 @@
         </Grid.RowDefinitions>
 
         <!--Title of the page-->
-        <Label Grid.Column="0" Grid.Row="0" Style="{StaticResource titleHeaderStyle}">Login</Label>
-        <!--username of the page-->
-        <Label Grid.Column="0" Grid.Row="1" Style="{StaticResource formLableStyle}">Username</Label>
-        <TextBox x:Name="UsernameInput" Grid.Row="1" Style="{StaticResource generalTextBoxStyle}"/>
+        <Label Grid.Column="0" Grid.Row="0" Style="{StaticResource TitleHeaderStyle}">Login</Label>
+        <!--Username of the page-->
+        <Label Grid.Column="0" Grid.Row="1" Style="{StaticResource FormLabelStyle}">Username</Label>
+        <TextBox x:Name="UsernameInput" Grid.Row="1" Style="{StaticResource GeneralTextBoxStyle}"/>
 
         <!--password of the page-->
-        <Label Grid.Column="0" Grid.Row="2" Style="{StaticResource formLableStyle}">Password</Label>
-        <PasswordBox x:Name="PasswordInput" Grid.Column="0" Grid.Row="2" Style="{StaticResource passwordBoxStyle}"/>
+        <Label Grid.Column="0" Grid.Row="2" Style="{StaticResource FormLabelStyle}">Password</Label>
+        <PasswordBox x:Name="PasswordInput" Grid.Column="0" Grid.Row="2" Style="{StaticResource PasswordBoxStyle}"/>
 
         <!--register if not logged-->
-        <Button Grid.Column="0" Grid.Row="3" Style="{StaticResource buttonGeneralStyle}" Click="Button_Click_Login">Login</Button>
-        <Label Grid.Column="0" Grid.Row="4" Style="{StaticResource formLableStyle}">Not Registered</Label>
-        <Button Grid.Column="0" Grid.Row="4"  Style="{StaticResource buttonGeneralStyle}" CommandParameter="{Binding Text, ElementName=UsernameInput}" Click="Button_Click_Register">Register</Button>
+        <Button Grid.Column="0" Grid.Row="3" Style="{StaticResource ButtonGeneralStyle}" Click="Button_Click_Login">Login</Button>
+        <Label Grid.Column="0" Grid.Row="4" Style="{StaticResource FormLabelStyle}">Not Registered</Label>
+        <Button Grid.Column="0" Grid.Row="4"  Style="{StaticResource ButtonGeneralStyle}" CommandParameter="{Binding Text, ElementName=UsernameInput}" Click="Button_Click_Register">Register</Button>
 
         <!--Background-->
         <Grid.Background>

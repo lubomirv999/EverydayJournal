@@ -2,7 +2,6 @@
 {
     using System.Windows.Controls;
     using Data;
-    using System.Linq;
     using System.Windows;
     using Utilities;
     /// <summary>
@@ -14,6 +13,8 @@
         {
             InitializeComponent();
 
+            TitlePhysical.Content = (LoggerUtility.UserName ?? "User") + " Condition";
+
             //Loading the current condition in the text box
             using (var context = new EverydayJournalContext())
             {
@@ -22,7 +23,7 @@
             }
         }
 
-        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void Button_Click_SaveChanges(object sender, RoutedEventArgs e)
         {
             //Updating the condition with the text from the text box
             using (var context = new EverydayJournalContext())
@@ -35,6 +36,13 @@
                 MessageBox.Show("Successfully updated condition!");
                 PhysicalConditionTextBox.Clear();
             }
+        }
+
+        private void Button_Click_BackToHomePage(object sender, RoutedEventArgs e)
+        {
+            //Back to home button
+            UserHomePage homePage = new UserHomePage();
+            this.NavigationService?.Navigate(homePage);
         }
     }
 }

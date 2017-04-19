@@ -9,20 +9,36 @@
       Title="PhysicalConditionsPage">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+
         <!--Title-->
-        <Label Grid.Row="0" Style="{StaticResource titleHeaderStyle}">Physical Conditions</Label>
-        
-        <Label Grid.Row="1" Style="{StaticResource labelsUserMenu}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30">Physical Condition</Label>   
-        <TextBox x:Name="PhysicalConditionTextBox" Grid.Row="1" Style="{StaticResource profileTextBoxStyle}"></TextBox>
-        <Button Grid.Row="2" Style="{StaticResource buttonGeneralStyle}" Click="Button_Click">Save changes</Button>
+        <Label x:Name="TitlePhysical"
+                Grid.Row="0"
+                Style="{StaticResource TitleHeaderStyle}"/>
+        <Button Grid.Row="0"
+                Style="{StaticResource ButtonMainMenu}" 
+                Content="Back to Main Menu" Click="Button_Click_BackToHomePage"/>
+
+        <Label Grid.Row="1" 
+                Style="{StaticResource LabelUserMenu}" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Center" 
+                Margin="30"
+                Content="Physical Condition"/>
+        <TextBox x:Name="PhysicalConditionTextBox" 
+                     Grid.Row="1" 
+                     Style="{StaticResource ProfileTextBoxStyle}"/>
+
+        <!--Save button-->
+        <Button Grid.Row="2" 
+                Style="{StaticResource ButtonGeneralStyle}" 
+                Click="Button_Click_SaveChanges"
+                Content="Save changes"/>
+
         <!--Background-->
         <Grid.Background>
             <ImageBrush ImageSource="Images/background.jpg"/>

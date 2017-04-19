@@ -1,6 +1,4 @@
-﻿
-
-namespace EverydayJournal
+﻿namespace EverydayJournal
 {
     using System.Linq;
     using System.Windows;
@@ -17,40 +15,46 @@ namespace EverydayJournal
         {
             InitializeComponent();
 
+            ProfileTitle.Content = (LoggerUtility.UserName ?? "User") + " Profile";
+
             //Loading logged used credentials in the text boxes
             using (var context = new EverydayJournalContext())
             {
-                var username = context.People.Where(n => n.Id == LoggerUtility.UserId).FirstOrDefault();
-                UsernameChange.Text = username.Name;
-                EmailChange.Text = username.Email;
+                var username = context.People.FirstOrDefault(n => n.Id == LoggerUtility.UserId);
+                UsernameChange.Text = username?.Name;
+                EmailChange.Text = username?.Email;
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_SaveChanges(object sender, RoutedEventArgs e)
         {
             using (var context = new EverydayJournalContext())
             {
                 //Getting current values of the text boxes
                 var username = UsernameChange.Text;
                 var email = EmailChange.Text;
-                var password = Password.Text;
-                var passwordConfirmation = ConfirmPassword.Text;
-                //Getting user password for the check
+                var password = Password.Password;
+                var passwordConfirmation = ConfirmPassword.Password;
+                //Getting user from DB
                 var userPassword = context.People.Find(LoggerUtility.UserId);
 
-                if (password == passwordConfirmation && userPassword.Password == password)
+                if (password == passwordConfirmation 
+                    && userPassword?.Password == password 
+                    && username.Length > 3 
+                    && email.Length > 3)
                 {
                     try
                     {
                         //Updating the user
-                        context.People.Find(LoggerUtility.UserId).Name = username;
-                        context.People.Find(LoggerUtility.UserId).Email = email;
+                        userPassword.Name = username;
+                        userPassword.Email = email;
 
                         context.SaveChanges();
 
                         MessageBox.Show("Successfully updated information!");
+
                         UserHomePage userHomePage = new UserHomePage();
-                        this.NavigationService.Navigate(userHomePage);
+                        this.NavigationService?.Navigate(userHomePage);
                     }
                     catch (Exception)
                     {
@@ -61,7 +65,18 @@ namespace EverydayJournal
                         ConfirmPassword.Clear();
                     }
                 }
+                else
+                {
+                    MessageBox.Show(
+                        "Invalid data. Please, try with correct password and Username/Email greater than 4 symbols!");
+                }
             }
+        }
+
+        private void Button_Click_BackToMainMenu(object sender, RoutedEventArgs e)
+        {
+            UserHomePage homePage = new UserHomePage();
+            this.NavigationService?.Navigate(homePage);
         }
     }
 }

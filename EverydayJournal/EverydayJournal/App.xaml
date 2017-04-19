@@ -7,62 +7,114 @@
         <!--General set of style-->
         
         <!--style for login/register titles-->
-        <Style x:Key="titleHeaderStyle" TargetType="{x:Type Label}">
+        <Style x:Key="TitleHeaderStyle" TargetType="{x:Type Label}">
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
-        <!--style for login/password labels-->
-        <Style x:Key="formLableStyle" TargetType="{x:Type Label}">
+        
+        <!--Style for login/password labels-->
+        <Style x:Key="FormLabelStyle" TargetType="{x:Type Label}">
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="16"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="Margin" Value="50,0,0,0"/>
         </Style>
+        
         <!--style for user menu titles-->
-        <Style x:Key="labelsUserMenu" TargetType="{x:Type Label}">
+        <Style x:Key="LabelUserMenu" TargetType="{x:Type Label}">
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Foreground" Value="Black"/>
         </Style>
+        
         <!--Password text box style-->
-        <Style x:Key="passwordBoxStyle" TargetType="{x:Type PasswordBox}">
+        <Style x:Key="PasswordBoxStyle" TargetType="{x:Type PasswordBox}">
             <Setter Property="Height" Value="35"/>
             <Setter Property="Width" Value="250"/>
             <Setter Property="HorizontalAlignment" Value="Right"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Margin" Value="0,0,50,0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="16"/>
         </Style>
 
         <!--General style for text box-->
-        <Style x:Key="generalTextBoxStyle" TargetType="{x:Type TextBox}">
+        <Style x:Key="GeneralTextBoxStyle" TargetType="{x:Type TextBox}">
             <Setter Property="Height" Value="35"/>
             <Setter Property="Width" Value="250"/>
             <Setter Property="HorizontalAlignment" Value="Right"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Margin" Value="0,0,50,0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="16"/>
         </Style>
 
         <!--General style for text boxes in User Profile-->
-        <Style x:Key="profileTextBoxStyle" TargetType="{x:Type TextBox}">
+        <Style x:Key="ProfileTextBoxStyle" TargetType="{x:Type TextBox}">
             <Setter Property="Height" Value="35"/>
             <Setter Property="Width" Value="200"/>
             <Setter Property="HorizontalAlignment" Value="Right"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Margin" Value="20,0,25,0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+
+        <!--General style for text boxes in User Profile-->
+        <Style x:Key="ProfilePasswordBoxStyle" TargetType="{x:Type PasswordBox}">
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="20,0,25,0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+
+        <!--General style for text boxes in Food Page-->
+        <Style x:Key="FoodTextBoxes" TargetType="{x:Type TextBox}">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="14"/>
         </Style>
 
         <!--General button style-->
-        <Style x:Key="buttonGeneralStyle" TargetType="{x:Type Button}">
+        <Style x:Key="ButtonGeneralStyle" TargetType="{x:Type Button}">
             <Setter Property="Height" Value="30"/>
             <Setter Property="Width" Value="100"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+
+        <!--Home Page button style-->
+        <Style x:Key="ButtonHomePage" TargetType="{x:Type Button}">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+
+        <!--Back to Main Menu button style-->
+        <Style x:Key="ButtonMainMenu" TargetType="{x:Type Button}">
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="120"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Margin" Value="5,5,15,5"/>
         </Style>
     </Application.Resources>
 </Application>
