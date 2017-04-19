@@ -91,7 +91,7 @@ namespace EverydayJournal
         private void Button_Click_Delete(object sender, RoutedEventArgs e)
         {
             var selectedTaskId = 0;
-            selectedTaskId = int.Parse(Task.SelectedItem.ToString().Substring(3, 5));
+            selectedTaskId = int.Parse(Tasks.SelectedItem.ToString().Substring(3, 5));
             using (var context = new EverydayJournalContext())
             {
                 var taskToDelete = context.Tasks.FirstOrDefault(x => x.Id == selectedTaskId);

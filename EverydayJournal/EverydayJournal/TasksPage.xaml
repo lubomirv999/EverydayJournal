@@ -9,16 +9,73 @@
       Title="TasksPage">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
         <!--Title-->
-        <Label Grid.Row="0" Style="{StaticResource titleHeaderStyle}">Tasks</Label>
+        <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource titleHeaderStyle}">User Tasks</Label>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <!--List box for the dates-->
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Style="{StaticResource titleHeaderStyle}">Tasks</Label>
+                <ListBox Margin="5,0,0,5" x:Name="Tasks" Grid.Row="1">
+
+                </ListBox>
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <!--Update Task-->
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button Margin="0,10" Grid.Row="0" Style="{StaticResource buttonGeneralStyle}" VerticalAlignment="Top" Click="Button_Click_UpdateTask">Update Task</Button>
+                    <TextBox x:Name="UpdatedTaskName" 
+                             Grid.Row="1" Height="30" 
+                             Width="150" 
+                             VerticalAlignment="Bottom" 
+                             Margin="0,0,0,20"></TextBox>
+                </Grid>
+                <!--Delete Task-->
+                <Button Margin="0,10" Grid.Row="1" Style="{StaticResource buttonGeneralStyle}" Click="Button_Click_Delete">Delete Task</Button>
+                <!--Add Task-->
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button Margin="0,10" Grid.Row="0" Style="{StaticResource buttonGeneralStyle}" VerticalAlignment="Top" Click="Button_Click_AddTask">Add Task</Button>
+                    <TextBox x:Name="AddTask"
+                             Grid.Row="1" 
+                             Height="30" 
+                             Width="150" 
+                             VerticalAlignment="Bottom"
+                             Margin="0,0,0,20"></TextBox>
+                </Grid>
+            </Grid>
+        </Grid>
+
         <!--Background-->
         <Grid.Background>
             <ImageBrush ImageSource="Images/background.jpg"/>
