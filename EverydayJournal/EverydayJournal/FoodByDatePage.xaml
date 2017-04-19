@@ -16,9 +16,9 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        
+
         <!--Title-->
-        <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource titleHeaderStyle}">Foods By Date</Label>
+        <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource titleHeaderStyle}">User Foods</Label>
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -26,13 +26,56 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <!--List box for the dates-->
-            <ListBox Grid.Column="0" Grid.Row="1" Margin="0,20,0,0">
-                <ListBoxItem>ListBoxItem 1</ListBoxItem>
-                <ListBoxItem>ListBoxItem 2</ListBoxItem>
-                <ListBoxItem>ListBoxItem 3</ListBoxItem>
-            </ListBox>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Style="{StaticResource titleHeaderStyle}">Foods</Label>
+                <ListBox Margin="5,0,0,5" x:Name="Foods" Grid.Row="1">
+
+                </ListBox>
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <!--Update Food-->
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button Margin="0,10" Grid.Row="0" Style="{StaticResource buttonGeneralStyle}" VerticalAlignment="Top" Click="Button_Click_UpdateFood">Update Food</Button>
+                    <TextBox x:Name="UpdatedFoodName" 
+                             Grid.Row="1" Height="30" 
+                             Width="150" 
+                             VerticalAlignment="Bottom" 
+                             Margin="0,0,0,20"></TextBox>
+                </Grid>
+                <!--Delete Food-->
+                <Button Margin="0,10" Grid.Row="1" Style="{StaticResource buttonGeneralStyle}" Click="Button_Click_Delete">Delete Food</Button>
+                <!--Add Food-->
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button Margin="0,10" Grid.Row="0" Style="{StaticResource buttonGeneralStyle}" VerticalAlignment="Top" Click="Button_Click_AddFood">Add Food</Button>
+                    <TextBox x:Name="AddFood"
+                             Grid.Row="1" 
+                             Height="30" 
+                             Width="150" 
+                             VerticalAlignment="Bottom"
+                             Margin="0,0,0,20"></TextBox>
+                </Grid>
+            </Grid>
         </Grid>
-        
+
         <!--Background-->
         <Grid.Background>
             <ImageBrush ImageSource="Images/background.jpg"/>

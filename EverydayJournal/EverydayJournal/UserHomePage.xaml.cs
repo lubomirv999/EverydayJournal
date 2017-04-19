@@ -1,20 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿
 
 namespace EverydayJournal
 {
+    using System.Windows;
+    using System.Windows.Controls;
+    using Utilities;
     /// <summary>
     /// Interaction logic for UserHomePage.xaml
     /// </summary>
@@ -50,6 +40,15 @@ namespace EverydayJournal
             PhysicalConditionsPage conditionsPage = new PhysicalConditionsPage();
 
             this.NavigationService.Navigate(conditionsPage);
+        }
+
+        private void Button_Click_Logout(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show($"{LoggerUtility.UserName} successful logout.");
+            LoggerUtility.UserName = "";
+            LoggerUtility.UserId = null;
+            LoginPage loginPage = new LoginPage();
+            this.NavigationService.Navigate(loginPage);
         }
     }
 }

@@ -51,7 +51,7 @@
         </Grid>
         
         <!--Logout button-->
-        <Button Grid.Row="2" Style="{StaticResource buttonGeneralStyle}" Margin="0,10,0,10">Logout</Button>
+        <Button Grid.Row="2" Style="{StaticResource buttonGeneralStyle}" Margin="0,10,0,10" Click="Button_Click_Logout">Logout</Button>
         <!--Background-->
         <Grid.Background>
             <ImageBrush ImageSource="Images/background.jpg"/>

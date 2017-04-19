@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Linq;
 using EverydayJournal.Models;
+using EverydayJournal.Utilities;
 
 namespace EverydayJournal
 {
@@ -15,6 +17,10 @@ namespace EverydayJournal
         public RegisterPage()
         {
             InitializeComponent();
+
+            //Clear User session before logging again
+            LoggerUtility.UserName = "";
+            LoggerUtility.UserId = null;
         }
 
         private void RegisterSubmit_Click(object sender, RoutedEventArgs e)
@@ -51,8 +57,11 @@ namespace EverydayJournal
                         });
 
                         context.SaveChanges();
-                        MessageBox.Show("Successfully logged in!");
-                        
+                        MessageBox.Show("Registration successful!");
+                        //Saving Id and UserName for the current session.
+                        LoggerUtility.UserId = context.People.Where(n=>n.Name == name).Select(x=>x.Id).FirstOrDefault();
+                        LoggerUtility.UserName = name;
+
                         UserHomePage homePage = new UserHomePage();
                         this.NavigationService.Navigate(homePage);
                     }

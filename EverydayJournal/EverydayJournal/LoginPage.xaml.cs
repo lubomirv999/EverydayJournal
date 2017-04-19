@@ -4,7 +4,7 @@
     using System.Windows.Controls;
     using Data;
     using System.Linq;
-
+    using Utilities;
     /// <summary>
     /// Interaction logic for LoginPage.xaml
     /// </summary>
@@ -13,6 +13,10 @@
         public LoginPage()
         {
             InitializeComponent();
+
+            //Clear User session before logging again
+            LoggerUtility.UserName = "";
+            LoggerUtility.UserId = null;
         }
 
         private void Button_Click_Register(object sender, RoutedEventArgs e)
@@ -30,13 +34,22 @@
                 //Getting username and password from the login form
                 var username = UsernameInput.Text;
                 var password = PasswordInput.Password;
-
+                
                 //Check if the data successfully match in the database 
                 if (context.People.Any(a => a.Password == password && a.Name == username))
                 {
+                    var userId =
+                        context.People.Where(a => a.Password == password && a.Name == username)
+                            .Select(i =>new { i.Id, i.Name})
+                            .FirstOrDefault();
+
                     MessageBox.Show("Successfully logged!");
-                    //TODO the user credentials should be saved while the user is logged in
+                    //Saving Id and UserName for the current session.
+                    LoggerUtility.UserId = userId.Id;
+                    LoggerUtility.UserName = userId.Name;
+
                     //Navigate to UserHomePage
+
                     UserHomePage userHomePage = new UserHomePage();
                     this.NavigationService.Navigate(userHomePage);
                 }

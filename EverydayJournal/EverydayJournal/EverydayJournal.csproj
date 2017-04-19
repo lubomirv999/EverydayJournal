@@ -82,6 +82,7 @@
     <Compile Include="UserHomePage.xaml.cs">
       <DependentUpon>UserHomePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\LoggerUtility.cs" />
     <Page Include="FoodByDatePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

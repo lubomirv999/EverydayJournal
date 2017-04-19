@@ -1,10 +1,13 @@
-﻿namespace EverydayJournal
+﻿
+
+namespace EverydayJournal
 {
     using System.Linq;
     using System.Windows;
     using System.Windows.Controls;
     using Data;
-
+    using Utilities;
+    using System;
     /// <summary>
     /// Interaction logic for ProfilePage.xaml
     /// </summary>
@@ -17,8 +20,7 @@
             //Loading logged used credentials in the text boxes
             using (var context = new EverydayJournalContext())
             {
-                //TODO logged user should be used here
-                var username = context.People.Where(n => n.Name == "martotko").FirstOrDefault();
+                var username = context.People.Where(n => n.Id == LoggerUtility.UserId).FirstOrDefault();
                 UsernameChange.Text = username.Name;
                 EmailChange.Text = username.Email;
             }
@@ -33,19 +35,31 @@
                 var email = EmailChange.Text;
                 var password = Password.Text;
                 var passwordConfirmation = ConfirmPassword.Text;
+                //Getting user password for the check
+                var userPassword = context.People.Find(LoggerUtility.UserId);
 
-                if (password == passwordConfirmation)
+                if (password == passwordConfirmation && userPassword.Password == password)
                 {
-                    //TODO Should be changed with the currently logged User
-                    //Updating the user with ID=22 for the tests
-                    context.People.Find(21).Name = username;
-                    context.People.Find(21).Email = email;
+                    try
+                    {
+                        //Updating the user
+                        context.People.Find(LoggerUtility.UserId).Name = username;
+                        context.People.Find(LoggerUtility.UserId).Email = email;
 
-                    context.SaveChanges();
+                        context.SaveChanges();
 
-                    MessageBox.Show("Successfully updated!");
-                    UsernameChange.Clear();
-                    EmailChange.Clear();
+                        MessageBox.Show("Successfully updated information!");
+                        UserHomePage userHomePage = new UserHomePage();
+                        this.NavigationService.Navigate(userHomePage);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Please, try again with correct information!");
+                        EmailChange.Clear();
+                        UsernameChange.Clear();
+                        Password.Clear();
+                        ConfirmPassword.Clear();
+                    }
                 }
             }
         }
