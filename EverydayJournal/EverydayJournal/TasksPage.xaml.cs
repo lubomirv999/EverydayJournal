@@ -15,7 +15,7 @@ namespace EverydayJournal
     /// </summary>
     public partial class TasksPage : Page
     {
-        public TaskPage()
+        public TasksPage()
         {
             InitializeComponent();
             using (var context = new EverydayJournalContext())
@@ -40,17 +40,17 @@ namespace EverydayJournal
             {
                 var updatedTaskName = UpdatedTaskName.Text;
 
-                var food = context.Tasks.FirstOrDefault(x => x.Id == taskToUpdate);
+                var task = context.Tasks.FirstOrDefault(x => x.Id == taskToUpdate);
 
-                if (updatedTaskName.Length > 5 && updatedTaskName != food.Name && taskToUpdate > 0)
+                if (updatedTaskName.Length > 5 && updatedTaskName != task.Name && taskToUpdate > 0)
                 {
-                    food.Name = updatedTaskName;
+                    task.Name = updatedTaskName;
                     context.SaveChanges();
                     MessageBox.Show("Successfully updated task");
 
                     //Reloading the page
-                    global::EverydayJournal.FoodByDatePage foodByDatePage = new global::EverydayJournal.FoodByDatePage();
-                    this.NavigationService.Navigate(foodByDatePage);
+                    global::EverydayJournal.TasksPage tasksPage = new global::EverydayJournal.TasksPage();
+                    this.NavigationService.Navigate(tasksPage);
                 }
                 else
                 {
@@ -81,10 +81,10 @@ namespace EverydayJournal
 
                 context.Tasks.AddOrUpdate(task);
                 context.SaveChanges();
-                MessageBox.Show("Successfully added food");
+                MessageBox.Show("Successfully added task");
                 //Reloading the page
-                global::EverydayJournal.FoodByDatePage foodByDatePage = new global::EverydayJournal.FoodByDatePage();
-                this.NavigationService.Navigate(foodByDatePage);
+                global::EverydayJournal.TasksPage tasksPage = new global::EverydayJournal.TasksPage();
+                this.NavigationService.Navigate(tasksPage);
             }
         }
 
