@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using EverydayJournal.Data;
+using EverydayJournal.Models;
+using EverydayJournal.Utilities;
+using Task = EverydayJournal.Models.Task;
 
 namespace EverydayJournal
 {
@@ -20,9 +15,102 @@ namespace EverydayJournal
     /// </summary>
     public partial class TasksPage : Page
     {
-        public TasksPage()
+        public TaskPage()
         {
             InitializeComponent();
+            using (var context = new EverydayJournalContext())
+            {
+                var tasks = context.Tasks
+                    .Where(x => x.PersonId == LoggerUtility.UserId)
+                    .OrderBy(z => z.Date.ExactDate)
+                    .Select(y => "Id." + y.Id.ToString() + "    " + y.Name + " - " + y.Date.ExactDate)
+                    .ToArray();
+
+                Tasks.ItemsSource = tasks;
+            }
+        }
+
+        private void Button_Click_UpdateTask(object sender, System.Windows.RoutedEventArgs e)
+        {
+            var taskToUpdate = 0;
+            //getting selected food Id
+            taskToUpdate = int.Parse(Tasks.SelectedItem.ToString().Substring(3, 5));
+
+            using (var context = new EverydayJournalContext())
+            {
+                var updatedTaskName = UpdatedTaskName.Text;
+
+                var food = context.Tasks.FirstOrDefault(x => x.Id == taskToUpdate);
+
+                if (updatedTaskName.Length > 5 && updatedTaskName != food.Name && taskToUpdate > 0)
+                {
+                    food.Name = updatedTaskName;
+                    context.SaveChanges();
+                    MessageBox.Show("Successfully updated task");
+
+                    //Reloading the page
+                    global::EverydayJournal.FoodByDatePage foodByDatePage = new global::EverydayJournal.FoodByDatePage();
+                    this.NavigationService.Navigate(foodByDatePage);
+                }
+                else
+                {
+                    MessageBox.Show("There is no changes or selected Task!");
+                }
+            }
+        }
+
+        private void Button_Click_AddTask(object sender, RoutedEventArgs e)
+        {
+            var taskToAdd = AddTask.Text;
+            if (taskToAdd.Length < 5)
+            {
+                MessageBox.Show("The task should be at least 5 letters long!");
+                return;
+            }
+
+
+            using (var context = new EverydayJournalContext())
+            {
+                var person = context.People.Find(LoggerUtility.UserId);
+                var task = new Task()
+                {
+                    Name = taskToAdd,
+                    Date = new Date() {ExactDate = DateTime.Now},
+                    Person = person
+                };
+
+                context.Tasks.AddOrUpdate(task);
+                context.SaveChanges();
+                MessageBox.Show("Successfully added food");
+                //Reloading the page
+                global::EverydayJournal.FoodByDatePage foodByDatePage = new global::EverydayJournal.FoodByDatePage();
+                this.NavigationService.Navigate(foodByDatePage);
+            }
+        }
+
+        private void Button_Click_Delete(object sender, RoutedEventArgs e)
+        {
+            var selectedTaskId = 0;
+            selectedTaskId = int.Parse(Task.SelectedItem.ToString().Substring(3, 5));
+            using (var context = new EverydayJournalContext())
+            {
+                var taskToDelete = context.Tasks.FirstOrDefault(x => x.Id == selectedTaskId);
+                if (taskToDelete != null)
+                {
+                    context.Tasks.Remove(taskToDelete);
+                    context.SaveChanges();
+
+                    MessageBox.Show("Successfully deleted task!");
+
+                    //Reloading the page
+                    global::EverydayJournal.TasksPage tasksPage = new global::EverydayJournal.TasksPage();
+                    this.NavigationService.Navigate(tasksPage);
+                }
+                else
+                {
+                    MessageBox.Show("There is nothing to delete!");
+                }
+            }
         }
     }
 }
